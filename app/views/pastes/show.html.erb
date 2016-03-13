@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @paste.content %>
-</p>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<%= @paste.id %>		
+	</div>
+	 <div class="panel-body">
+  	<%= @paste.content %>
+  	</div>
+</div>
 
-<%= link_to 'Edit', edit_paste_path(@paste) %> |
-<%= link_to 'Back', pastes_path %>
+<%= link_to '', edit_paste_path(@paste),class: "glyphicon glyphicon-pencil", :title => "Edit" %> |
+<%= link_to '', pastes_path, class: "glyphicon glyphicon-arrow-left", :title => "Back" %>
