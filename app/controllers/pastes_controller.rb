@@ -5,6 +5,7 @@ class PastesController < ApplicationController
   # GET /pastes.json
   def index
     @pastes = Paste.all
+    @paste = Paste.new
   end
 
   # GET /pastes/1
