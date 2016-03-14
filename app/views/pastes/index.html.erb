@@ -4,6 +4,7 @@
 <div class="row">
   <div class="col-md-8">
      <h1>New Paste</h1>
+     Paste lasts for 15 minutes!
      <%= render 'form' %>
   </div>
 
@@ -22,7 +23,7 @@
   <tbody>
     <% @pastes.each do |paste| %>
       <tr>
-        <td>Anonymous</td>
+        <td><%= paste.id %></td>
         <td><%= link_to '', paste, class: "glyphicon glyphicon-zoom-in", :title => "Show" %></td>
         <td><%= link_to '', edit_paste_path(paste), class: "glyphicon glyphicon-pencil", :title => "Edit" %></td>
         <td><%= link_to '', paste, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove", :title => "Remove" %></td>

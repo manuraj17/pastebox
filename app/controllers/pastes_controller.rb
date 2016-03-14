@@ -6,6 +6,7 @@ class PastesController < ApplicationController
   def index
     @pastes = Paste.all
     @paste = Paste.new
+
   end
 
   # GET /pastes/1
@@ -29,6 +30,8 @@ class PastesController < ApplicationController
 
     respond_to do |format|
       if @paste.save
+        Resque.enqueue_at(15.minutes.from_now, PasteDeleter, @paste.id )
+        #Resque.enqueue(PasteDeleter, @paste.id )
         format.html { redirect_to @paste, notice: 'Paste was successfully created.' }
         format.json { render :show, status: :created, location: @paste }
       else
