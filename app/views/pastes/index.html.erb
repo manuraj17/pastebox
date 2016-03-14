@@ -1,17 +1,14 @@
 <p id="notice" class="alert"><%= notice %></p>
 
 
-<div class="row">
+<div class="row" id="#mainPage">
   <div class="col-md-8">
-     <h1>New Paste</h1>
-     Paste lasts for 15 minutes!
+     Pastes will be deleted after 15 minutes
      <%= render 'form' %>
   </div>
 
   <div class="col-md-4">
-<h1><span class="label label-default">Listing Pastes</span></h1>
-
-
+<div class="listPasteHeader">Listing Pastes</div>
 <table class="table ">
   <thead>
     <tr>
